@@ -13,12 +13,12 @@ public class ProfileController {
     private String name;
     private SystemProfile profile;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public ProfileController(SystemProfile profile) {
         this.profile = profile;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @GetMapping("name")
@@ -26,7 +26,7 @@ public class ProfileController {
         return String.format("%s", name);
     }
 
-    @GetMapping
+    @GetMapping("profile")
     public String getProfile() {
         return profile.getProfile();
     }
